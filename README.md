@@ -143,7 +143,3 @@ O servidor estará disponível em [http://127.0.0.1:5000/](http://127.0.0.1:5000
 Se você quiser contribuir para este projeto, fique à vontade! Envie um **Pull Request** ou abra uma **Issue**.
 
 ---
-
-## 📄 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
