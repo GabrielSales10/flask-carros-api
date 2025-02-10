@@ -1,32 +1,18 @@
-Carros = [
-    {
-        'id': 1,
-        'marca': 'Fiat',
-        'modelo': 'Marea',
-        'ano': 1999
-    },
-    {
-        'id': 2,
-        'marca': 'Fiat',
-        'modelo': 'Uno',
-        'ano': 1992
-    },
-    {
-        'id': 3,
-        'marca': 'Ford',
-        'modelo': 'Escort',
-        'ano': 1985
-    },
-    {
-        'id': 4,
-        'marca': 'Chevrolet',
-        'modelo': 'Chevette',
-        'ano': 1978
-    },
-    {
-        'id': 5,
-        'marca': 'Volkswager',
-        'modelo': 'Fusca',
-        'ano': 1962
-    }
-]
+from flask_sqlalchemy import SQLAlchemy
+from config import DATABASE_URL
+from flask import Flask
+
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db = SQLAlchemy(app)
+
+class Carro(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    marca = db.Column(db.String(50), nullable=False)
+    modelo = db.Column(db.String(50), nullable=False)
+    ano = db.Column(db.Integer, nullable=False)
+
+# Criar as tabelas no banco de dados
+with app.app_context():
+    db.create_all()
