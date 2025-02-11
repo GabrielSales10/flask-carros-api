@@ -8,6 +8,8 @@ Bem-vindo à **Flask Carros API**, uma aplicação simples desenvolvida com o fr
 
 - **GET `/carros`**: Retorna todos os carros cadastrados.
 - **POST `/carros`**: Cadastra um novo carro com as informações fornecidas.
+- **PUT `/carros/<id>`**: Atualiza as informações de um carro específico.
+- **DELETE `/carros/<id>`**: Remove um carro do banco de dados.
 
 ---
 
